@@ -30,7 +30,7 @@ public class StoreImplTest {
     }
 
     @Test
-    void givenProductWithInsufficientQuantity_whenBuy_thenThrowException() {
+    void givenProductWithInsufficientQuantity_whenBuy_thenThrowExceptionWithMsgOutOfStock() {
         // Arrange
         product.setQuantity(0);
 
@@ -42,7 +42,7 @@ public class StoreImplTest {
     }
 
     @Test
-    void givenProductWithSufficientQuantityAndFailedPayment_whenBuy_thenThrowException() {
+    void givenProductWithSufficientQuantityAndFailedPayment_whenBuy_thenThrowExceptionPaymentFailure() {
         // Arrange
         when(accountManager.withdraw(any(), anyInt())).thenReturn("insufficient account balance");
         product.setQuantity(3);

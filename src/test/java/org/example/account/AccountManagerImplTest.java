@@ -52,7 +52,7 @@ public class AccountManagerImplTest {
     }
 
     @Test
-    void givenCreditAllowedCustomerWithInsufficientBalanceAndMaxCreditExceeded_whenWithdraw_thenCreditAndSucceed() {
+    void givenCreditAllowedCustomerWithInsufficientBalanceAndMaxCreditExceeded_whenWithdraw_thenDisplayErrorAndFail() {
         // Arrange
         c.setBalance(800);
         c.setCreditAllowed(true);
@@ -67,7 +67,7 @@ public class AccountManagerImplTest {
     }
 
     @Test
-    void givenCustomerWithInsufficientBalance_whenWithdraw_thenCreditAndSucceed(){
+    void givenCustomerWithInsufficientBalance_whenWithdraw_thenDisplayErrorAndFail(){
         // Arrange
         c.setBalance(1500);
 
